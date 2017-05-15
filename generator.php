@@ -35,7 +35,7 @@ $cb->setToken($_ENV["ACCESS_TOKEN"], $_ENV["ACCESS_TOKEN_SECRET"]);
 # Get random insult from API
 # Yes, we do it that way since the original developer is too stupid
 # to use regular JSON.
-preg_match("/<strong ?.*>(.*)<\/strong>/", file_get_contents("https://kontrollraum.org/SaschaBeleidigungsGenerator/get.php"), $string);
+preg_match("/<strong ?.*>(.*)<\/strong>/", file_get_contents("https://kontrollraum.org/api/saschabeleidigen"), $string);
 
 # Tweet it!
 $reply = $cb->statuses_update('status='.urlencode($string[1]));
